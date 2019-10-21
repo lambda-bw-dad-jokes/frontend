@@ -11,11 +11,11 @@ export const fetchData = () => dispatch => {
     axios
         .get(`http://jwhit-dadjokes.herokuapp.com/dadjokes/all?size=1000&page=0&sort=dadjokeid,desc`)
         .then(response => {
-            console.log(response.data)
+            //console.log(response.data)
             dispatch({ type: FETCH_DATA_SUCCESS, payload: response.data.jokes})
         })
         .catch(err => {
-            console.log(err.response)
+            //console.log(err.response)
             dispatch({ type: LOGIN_FAILURE, payload: err})}
             )
     }
@@ -30,11 +30,11 @@ export const addData = (newJoke) => dispatch => {
     axios
         .post(`http://jwhit-dadjokes.herokuapp.com/dadjokes/all?size=1000&page=0&sort=dadjokeid,desc`, newJoke)
         .then(response => {
-            console.log(response)
+            //console.log(response)
             dispatch({ type: ADD_DATA_SUCCESS, payload: response.data.jokes})
         })
         .catch(err => {
-            console.log(err.response)
+            //console.log(err.response)
             dispatch({ type: LOGIN_FAILURE, payload: err})
         })
     }
@@ -49,11 +49,11 @@ export const deleteData = (id) => dispatch => {
     axios
         .delete(`http://jwhit-dadjokes.herokuapp.com/dadjokes/all?size=1000&page=0&sort=dadjokeid,desc${id}`)
         .then(response => {
-            console.log(response)
+            //console.log(response)
             dispatch({ type: DELETE_DATA_SUCCESS, payload: response.data.joke})
         })
         .catch(err => {
-            console.log(err)
+            //console.log(err)
             dispatch({ type: LOGIN_FAILURE, payload: err})
         })
     }
@@ -68,11 +68,11 @@ export const editData = (id, editJoke) => dispatch => {
     axios
         .put(`http://jwhit-dadjokes.herokuapp.com/dadjokes/all?size=1000&page=0&sort=dadjokeid,desc${id}`, editJoke)
         .then(response => {
-            console.log(response)
+            //console.log(response)
             dispatch({ type: EDIT_DATA_SUCCESS, payload: response.data.jokes})
         })
         .catch(err => {
-            console.log(err.response)
+            //console.log(err.response)
             dispatch({ type: LOGIN_FAILURE, payload: err})})
     }
 
@@ -91,12 +91,12 @@ export const userLogin = (email, password) => dispatch => {
         })
         .then(response => {
             localStorage.setItem('token', response.data.token)
-            console.log(response.data)
+            //console.log(response.data)
             dispatch({ type: LOGIN_SUCCESS, payload: response.data })
             return true
         })
         .catch(res => {
-            console.log(res)
+            //console.log(res)
             dispatch({ type: LOGIN_FAILURE, payload: res})
         })
     }
@@ -110,13 +110,13 @@ export const register = newUser => dispatch => {
   axios
     .post(`https://jwhit-dadjokes.herokuapp.com/createnewuser`, newUser)
     .then(res => {
-      console.log(res)
+      //console.log(res)
       localStorage.setItem('token', res.data.token)
       dispatch({ type: REGISTRATION_SUCCESS, payload: res.data });
       return true;
     })
     .catch(err => {
-      console.log(err.response)
+      //console.log(err.response)
       dispatch({ type: REGISTRATION_FAILURE, payload: err.response })
     });
 };

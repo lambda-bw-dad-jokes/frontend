@@ -8,12 +8,12 @@ function JokeList (props) {
 
   useEffect(() => {
         props.fetchData()
-    }, [])
+    }, )
 
     console.log(props.jokes)
 
   return (
-<>
+      <>
         {props.jokes.map(joke => (
           <div>
           <JokeCard 
@@ -26,6 +26,7 @@ function JokeList (props) {
    </>
   );
 }
+
 
 
 const mapStateToProps = state => {
