@@ -40,6 +40,11 @@ const searchJokesHandler = e => {
   console.log('data', filteredData)
 
   return (
+        <>
+        <Router>
+            <Route path="/jokes" component={Jokes} />
+         </Router>
+        </>
     <div className="App">
       <h1> dad jokess </h1>
     </div>
