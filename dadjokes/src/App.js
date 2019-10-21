@@ -43,8 +43,11 @@ const searchJokesHandler = e => {
         <>
         <Router>
             <Route path="/jokes" component={Jokes} />
-          </Router>
+         </Router>
         </>
+    <div className="App">
+      <h1> dad jokess </h1>
+    </div>
   );
 }
 
