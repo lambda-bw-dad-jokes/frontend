@@ -4,7 +4,7 @@ import { axioswithAuth } from '../utilities/axiosAuth';
 class Login extends React.Component {
     state = {
         credentials: {
-            usernameee: '',
+            username: '',
             password:''
         }
     }
@@ -22,7 +22,7 @@ class Login extends React.Component {
         e.preventDefault();
         axioswithAuth()
             .post('/login', this.state.credentials)
-            .then(res => console.log(res))
+            .then(response => console.log(response))
             .catch(error => console.log(error))
     };
 
