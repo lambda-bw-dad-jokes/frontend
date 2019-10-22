@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Jokes from "./Components/Jokes";
 import axios from 'axios'
 import HomePage from './Components/HomePage';
+import Profile from "./Components/Profile";
 
 
 
@@ -43,6 +44,7 @@ const searchJokesHandler = e => {
   return (
         <>
         <Router>
+            <Route path='/profile' component={Profile} />
             <Route exact path ='/' component={HomePage} />
             <Route path="/jokes" component={Jokes} />
          </Router>
