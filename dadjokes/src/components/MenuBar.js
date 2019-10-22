@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, Menu } from 'semantic-ui-react';
-import { NavBarMenu } from './StyledWidgets';
+import { NavBarMenu, menuBarEmoji } from './StyledWidgets';
+
 
 
 
@@ -41,6 +42,7 @@ import { NavBarMenu } from './StyledWidgets';
                     </Dropdown>
 
                     <Menu.Menu position='left' >
+                    
                             <h1>Dad Jokes!</h1>
                     </Menu.Menu>
                     
@@ -73,6 +75,7 @@ import { NavBarMenu } from './StyledWidgets';
                     </Dropdown>
 
                     <Menu.Menu position='left' >
+                   
                             <h1  >Dad Jokes</h1>
                     </Menu.Menu>
                 </Menu>

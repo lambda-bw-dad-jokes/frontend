@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Jokes from "./Components/Jokes";
-import axios from 'axios'
 import HomePage from './Components/HomePage';
-import Profile from "./Components/Profile";
+import MenuBar from './Components/MenuBar.js';
+import { testingBackground } from './Components/StyledWidgets'
 import PublicJokes from './Components/PublicJokes';
-import MenuBar from './Components/MenuBar.js'
-
-
+import Profile from "./Components/Profile";
+import Jokes from "./Components/Jokes";
+import { DataContext } from './contexts/DataContext'
+import axios from 'axios'
 
 function App(props) {
   const [data, setData] = useState([])
@@ -17,7 +17,7 @@ function App(props) {
   useEffect(() => {
     const getFeed= () => {
             axios 
-                .get("http://jwhit-dadjokes.herokuapp.com/dadjokes/all?size=1000&page=0&sort=dadjokeid,desc")
+                .get(" https://mesofunny.herokuapp.com/api/v1/jokes")
 
                 .then(response => {
                     console.log(response.data.jokes)
@@ -44,7 +44,9 @@ const searchJokesHandler = e => {
   console.log('data', filteredData)
 
   return (
+    <div style={testingBackground}>
         <>
+        <DataContext.Provider value={{searchJokesHandler, data, filteredData}}>
         <Router>
         <Route path="/" component={MenuBar} />
             <Route exact path ='/' component={HomePage} />
@@ -52,10 +54,10 @@ const searchJokesHandler = e => {
             <Route path='/public-feed' component={PublicJokes} />
             <Route path="/jokes" component={Jokes} />
          </Router>
+         </DataContext.Provider>
         </>
-    // <div className="App">
-    //   <h1> dad jokess </h1>
-    // </div>
+        </div>
+  
   );
 }
 

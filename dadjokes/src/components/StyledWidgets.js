@@ -31,7 +31,7 @@ export const button = {
 }
 
 export const testingBackground = {
-    background: "rgb(86, 177, 173)",
+    background: "#dbedf3",
 }
 
 
