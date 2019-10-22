@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import HomePage from './Components/HomePage';
-import MenuBar from './Components/MenuBar.js';
-import { testingBackground } from './Components/StyledWidgets'
-import PublicJokes from './Components/PublicJokes';
-import Profile from "./Components/Profile";
+import { BrowserRouter as Router, Route } from 'react-router-dom'; kiyani-bamba
 import Jokes from "./Components/Jokes";
-import { DataContext } from './contexts/DataContext'
 import axios from 'axios'
+import LoginForm from './Components/LoginForm';
+import Register from './Components/Register'
+
 
 function App(props) {
   const [data, setData] = useState([])
@@ -44,20 +41,20 @@ const searchJokesHandler = e => {
   console.log('data', filteredData)
 
   return (
-    <div style={testingBackground}>
-        <>
-        <DataContext.Provider value={{searchJokesHandler, data, filteredData}}>
+
+        <div>
         <Router>
         <Route path="/" component={MenuBar} />
             <Route exact path ='/' component={HomePage} />
             <Route path='/profile' component={Profile} />
             <Route path='/public-feed' component={PublicJokes} />
             <Route path="/jokes" component={Jokes} />
+            <Route path="/login" component={LoginForm} />
+            <Route path="/register" component={Register} />
          </Router>
-         </DataContext.Provider>
-        </>
         </div>
-  
+
+       
   );
 }
 
