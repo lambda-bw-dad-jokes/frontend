@@ -1,7 +1,6 @@
 import React from 'react';
 import { axioswithAuth } from '../utilities/axiosAuth';
 import "../App.css";
-import {Redirect} from 'react-router-dom';
 
 class Login extends React.Component {
     state = {

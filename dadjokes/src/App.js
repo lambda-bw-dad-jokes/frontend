@@ -49,10 +49,6 @@ const searchJokesHandler = e => {
             <Route path="/register" component={Register} />
          </Router>
         </div>
-    // <div className="App">
-    //   <h1> dad jokess </h1>
-    //   <div></div>
-    // </div>
   );
 }
 

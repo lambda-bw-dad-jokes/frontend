@@ -116,50 +116,50 @@ export const reducer = (state = initialState, action) => {
                 isFetching: false,
                 
             }
-        case LOGIN_START:
-            return {
-                ...state,
-                error: '',
-                isLoggedIn: false,
-                jokes: [],
-                user: ''
-            }
-        case LOGIN_SUCCESS:
+        // case LOGIN_START:
+        //     return {
+        //         ...state,
+        //         error: '',
+        //         isLoggedIn: false,
+        //         jokes: [],
+        //         user: ''
+        //     }
+        // case LOGIN_SUCCESS:
             
-            return {
-                ...state,
-                error: '',
-                isLoggedIn: true,
-                user: action.payload
-            }
-        case LOGIN_FAILURE:
-            return {
-                ...state,
-                error: action.payload,
-                isLoggedIn: false,
-                user: ''
-            }
-        case REGISTRATION_START:
-            return {
-                ...state,
-                error: '',
-                isLoggedIn: false,
-                jokes: []
-            }
-        case REGISTRATION_SUCCESS:
+        //     return {
+        //         ...state,
+        //         error: '',
+        //         isLoggedIn: true,
+        //         user: action.payload
+        //     }
+        // case LOGIN_FAILURE:
+        //     return {
+        //         ...state,
+        //         error: action.payload,
+        //         isLoggedIn: false,
+        //         user: ''
+        //     }
+        // case REGISTRATION_START:
+        //     return {
+        //         ...state,
+        //         error: '',
+        //         isLoggedIn: false,
+        //         jokes: []
+        //     }
+        // case REGISTRATION_SUCCESS:
             
-            return {
-                ...state,
-                error: '',
-                isLoggedIn: true,
-                jokes: action.payload
-            }
-        case REGISTRATION_FAILURE:
-            return {
-                ...state,
-                error: action.payload,
-                isLoggedIn: false,
-            }
+        //     return {
+        //         ...state,
+        //         error: '',
+        //         isLoggedIn: true,
+        //         jokes: action.payload
+        //     }
+        // case REGISTRATION_FAILURE:
+        //     return {
+        //         ...state,
+        //         error: action.payload,
+        //         isLoggedIn: false,
+        //     }
         default: 
             return state
 
