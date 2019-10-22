@@ -154,12 +154,12 @@ export const reducer = (state = initialState, action) => {
         //         isLoggedIn: true,
         //         jokes: action.payload
         //     }
-        // case REGISTRATION_FAILURE:
-        //     return {
-        //         ...state,
-        //         error: action.payload,
-        //         isLoggedIn: false,
-        //     }
+        case REGISTRATION_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isLoggedIn: false,
+            }
         default: 
             return state
 
