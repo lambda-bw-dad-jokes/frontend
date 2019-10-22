@@ -115,7 +115,7 @@ export const reducer = (state = initialState, action) => {
                 error: action.payload,
                 isFetching: false,
                 
-            }
+            } kiyani-bamba
         // case LOGIN_START:
         //     return {
         //         ...state,
@@ -154,6 +154,46 @@ export const reducer = (state = initialState, action) => {
         //         isLoggedIn: true,
         //         jokes: action.payload
         //     }
+=======
+        case LOGIN_START:
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: false,
+                jokes: [],
+                user: ''
+            }
+        case LOGIN_SUCCESS:
+            
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: true,
+                user: action.payload
+            }
+        case LOGIN_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isLoggedIn: false,
+                user: ''
+            }
+        case REGISTRATION_START:
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: false,
+                jokes: []
+            }
+        case REGISTRATION_SUCCESS:
+            
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: true,
+                jokes: action.payload
+            }
+ master
         case REGISTRATION_FAILURE:
             return {
                 ...state,

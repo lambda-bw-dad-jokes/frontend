@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom'; kiyani-bamba
 import Jokes from "./Components/Jokes";
 import axios from 'axios'
 import LoginForm from './Components/LoginForm';
 import Register from './Components/Register'
-
 
 
 function App(props) {
@@ -42,6 +41,7 @@ const searchJokesHandler = e => {
   console.log('data', filteredData)
 
   return (
+
         <div>
         <Router>
             <Route path="/jokes" component={Jokes} />
@@ -49,6 +49,8 @@ const searchJokesHandler = e => {
             <Route path="/register" component={Register} />
          </Router>
         </div>
+
+       
   );
 }
 
