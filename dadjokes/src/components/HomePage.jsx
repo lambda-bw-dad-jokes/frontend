@@ -2,8 +2,10 @@
 
 // imports 
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios"; 
+import axios from "axios";
+import '../homepage.css'; 
 import HomePageGrid from "./HomePageGrid";
+import dad from "../Components/images/dad-quote.jpg"; 
 import { DataContext } from '../contexts/DataContext'
 
 
@@ -40,6 +42,7 @@ const HomePage = (props) => {
     return (
       <div className="home-container">
             <div className="daily-joke-container">
+            <img src={dad} className="dad-quote-img"/>
                 <h1 className="daily-joke">{joke}</h1>
             </div>
 
