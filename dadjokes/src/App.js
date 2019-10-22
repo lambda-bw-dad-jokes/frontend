@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Jokes from "./components/Jokes";
+import Jokes from "./Components/Jokes";
 import axios from 'axios'
+import HomePage from './Components/HomePage';
 
 
 
@@ -42,12 +43,13 @@ const searchJokesHandler = e => {
   return (
         <>
         <Router>
+            <Route exact path ='/' component={HomePage} />
             <Route path="/jokes" component={Jokes} />
          </Router>
         </>
-    <div className="App">
-      <h1> dad jokess </h1>
-    </div>
+    // <div className="App">
+    //   <h1> dad jokess </h1>
+    // </div>
   );
 }
 
