@@ -6,6 +6,7 @@ import axios from 'axios'
 import HomePage from './Components/HomePage';
 import Profile from "./Components/Profile";
 import PublicJokes from './Components/PublicJokes';
+import MenuBar from './Components/MenuBar.js'
 
 
 
@@ -45,6 +46,7 @@ const searchJokesHandler = e => {
   return (
         <>
         <Router>
+        <Route path="/" component={MenuBar} />
             <Route exact path ='/' component={HomePage} />
             <Route path='/profile' component={Profile} />
             <Route path='/public-feed' component={PublicJokes} />
