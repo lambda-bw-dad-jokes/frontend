@@ -5,6 +5,7 @@ import Jokes from "./Components/Jokes";
 import axios from 'axios'
 import HomePage from './Components/HomePage';
 import Profile from "./Components/Profile";
+import PublicJokes from './Components/PublicJokes';
 
 
 
@@ -44,8 +45,9 @@ const searchJokesHandler = e => {
   return (
         <>
         <Router>
-            <Route path='/profile' component={Profile} />
             <Route exact path ='/' component={HomePage} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/public-feed' component={PublicJokes} />
             <Route path="/jokes" component={Jokes} />
          </Router>
         </>
