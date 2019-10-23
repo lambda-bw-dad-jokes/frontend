@@ -36,6 +36,16 @@ import { NavBarMenu, menuBarEmoji } from './StyledWidgets';
                             </Link>
                             </div>
                             <div>
+                            <Link to ='/login'>
+                                <Dropdown.Item className="nav">Login</Dropdown.Item>
+                            </Link>
+                            </div>
+                            <div>
+                            <Link to ='/register'>
+                                <Dropdown.Item className="nav">Register</Dropdown.Item>
+                            </Link>
+                            </div>
+                            <div>
                                 <Dropdown.Item onClick={logout} className="nav">Logout</Dropdown.Item>
                             </div>
                         </Dropdown.Menu>
@@ -62,8 +72,13 @@ import { NavBarMenu, menuBarEmoji } from './StyledWidgets';
                             </Link>
                             </div>
                             <div>
-                            <Link to ='/user'>
+                            <Link to ='/login'>
                                 <Dropdown.Item>Login</Dropdown.Item>
+                            </Link>
+                            </div>
+                            <div>
+                            <Link to ='/register'>
+                                <Dropdown.Item>Register</Dropdown.Item>
                             </Link>
                             </div>
                             <div>
