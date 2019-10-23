@@ -115,7 +115,11 @@
 //                 error: action.payload,
 //                 isFetching: false,
                 
+<<<<<<< HEAD
 //             }
+=======
+            } kiyani-bamba
+>>>>>>> bb20cd5032698211cd7f18af30cd5401cc1f8086
         // case LOGIN_START:
         //     return {
         //         ...state,
@@ -154,6 +158,7 @@
         //         isLoggedIn: true,
         //         jokes: action.payload
         //     }
+<<<<<<< HEAD
 //         case REGISTRATION_FAILURE:
 //             return {
 //                 ...state,
@@ -162,6 +167,56 @@
 //             }
 //         default: 
 //             return state
+=======
+=======
+        case LOGIN_START:
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: false,
+                jokes: [],
+                user: ''
+            }
+        case LOGIN_SUCCESS:
+            
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: true,
+                user: action.payload
+            }
+        case LOGIN_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isLoggedIn: false,
+                user: ''
+            }
+        case REGISTRATION_START:
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: false,
+                jokes: []
+            }
+        case REGISTRATION_SUCCESS:
+            
+            return {
+                ...state,
+                error: '',
+                isLoggedIn: true,
+                jokes: action.payload
+            }
+ master
+        case REGISTRATION_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isLoggedIn: false,
+            }
+        default: 
+            return state
+>>>>>>> bb20cd5032698211cd7f18af30cd5401cc1f8086
 
 //     } 
 
