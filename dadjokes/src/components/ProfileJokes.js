@@ -40,11 +40,10 @@ const ProfileJokes = () => {
             jokes.map(joke => {
               return (
                 <Joke
-                  id={joke.id}
-                  key={joke.id}
-                  setup={joke.setup}
-                  punchline={joke.punchline}
-                  user={currentUser}
+                id={joke.dadjokeid}
+                key={joke.id}
+                dadjokeanswer={joke.dadjokeanswer}
+                dadjokequestion={joke.dadjokequestion}
                 />
               );
             })
