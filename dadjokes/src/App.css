@@ -21,17 +21,95 @@
   color: #09d3ac;
 }
 
-.Login {
-  padding: 100px 0;
-  background-color:rgb(255, 255, 255);
-  width: 30%;
-  height: 20%;
-  margin: 100px auto;
-  border-radius: 20px;
-  margin-top: 150px;
+.App {
+  align-content: center;
+  background-color: #f1bc31;
 }
 
-.Login form {
-  margin: 0 auto;
-  max-width: 320px;
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+@media all and (min-width: 480px) {
+  .Login {
+    /* padding: 60px 0; */
+  }
+
+  .Login form {
+    margin: 0 auto;
+    margin-right: 50px;
+    max-width: 350px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .Login form p {
+    text-align: center;
+    margin:15px;
+  }
+
+  .Login form h1 {
+    border-bottom:1px solid #e25822;
+    margin-right:25px;
+    margin-bottom: 15px;
+    text-align: start;
+  }
+}
+
+.jumbotron {
+  background-image: url("./DesignsElements/simpsons-wallpaper-hd.jpg");
+  background-repeat: no-repeat;
+  background-size: 340px auto;
+  width:800px;
+  /* box-shadow: 2px 2px 2px 2px white; */
+}
+
+.body{
+  background-color: #e25822;
+  display: flex;
+  align-content: center;
+}
+
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
 }

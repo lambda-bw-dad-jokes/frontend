@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux'
-import { fetchData, addData, deleteData, editData } from '../store/actions'
+// import { fetchData, addData, deleteData, editData } from '../store/actions'
 
 
 function JokeCard (props) {
@@ -85,5 +85,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { fetchData, addData, deleteData, editData }
+    // { fetchData, addData, deleteData, editData }
 )(JokeCard)
