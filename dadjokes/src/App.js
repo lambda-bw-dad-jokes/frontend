@@ -6,10 +6,10 @@ import Register from "./Components/Register";
 import MenuBar from "./Components/MenuBar";
 import Profile from "./Components/Profile";
 import JokeList from "./Components/JokeList";
-
+import Footer from "./Components/Footer";
 import { JokeProvider } from "./contexts/JokeContext";
 import { FlagProvider } from "./contexts/FlagContext";
-import HomePage from './Components/HomePage';
+import HomePage from "./Components/HomePage";
 
 function App() {
   return (
@@ -17,16 +17,15 @@ function App() {
       <JokeProvider>
         <FlagProvider>
           <Route path="/" component={MenuBar} />
-          <Route exact path ='/' component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/jokes" component={JokeList} />
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={LoginForm} />
           <Route path="/register" component={Register} />
         </FlagProvider>
       </JokeProvider>
-      
+      <Route path="/Footer" component={Footer} />
     </div>
-    
   );
 }
 

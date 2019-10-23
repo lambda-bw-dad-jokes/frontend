@@ -31,7 +31,7 @@ const twitter = <FontAwesomeIcon icon={faTwitter} />;
 const instagram = <FontAwesomeIcon icon={faInstagram} />;
 const brands = [fb, github, twitter, instagram];
 
-export default function Socials() {
+export default function Footer() {
   return (
     <div className="social-media">
       <FooterWrap>
@@ -49,3 +49,4 @@ export default function Socials() {
     </div>
   );
 }
+
