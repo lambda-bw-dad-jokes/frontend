@@ -1,7 +1,7 @@
 import React, { useEffect }  from "react";
 import JokeCard from "./JokeCard";
 import { connect } from 'react-redux'
-import { fetchData, addData, deleteData, editData } from '../store/actions'
+// import { fetchData, addData, deleteData, editData } from '../store/actions'
 
 
 function JokeList (props) {
@@ -41,5 +41,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { fetchData, addData, deleteData, editData }
+    // { fetchData, addData, deleteData, editData }
 )(JokeList)
