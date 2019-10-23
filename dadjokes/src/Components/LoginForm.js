@@ -1,10 +1,11 @@
 import React from 'react';
 import { axioswithAuth } from '../utilities/axiosAuth';
+import "../App.css";
 
 class Login extends React.Component {
     state = {
         credentials: {
-            usernameee: '',
+            username: '',
             password:''
         }
     }
@@ -22,29 +23,35 @@ class Login extends React.Component {
         e.preventDefault();
         axioswithAuth()
             .post('/login', this.state.credentials)
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
+            .then(response => {
+                localStorage.setItem('token', response.data.access_token );
+                this.props.history.push('/jokes');
+            })
+            .catch(error => console.log(error));
     };
 
     render(){
-        return
-        <div>
+        return(
+        <div className="Login">
         <form onSubmit={this.login}>
             <input
             type='text'
             name='username'
+            placeholder='username'
             value={this.state.credentials.username}
             onChange={this.handleChange}
             />
             <input
             type="password"
             name="password"
+            placeholder='password'
             value={this.state.credentials.password}
             onChange={this.handleChange}
             />
-            <button> Log in </button>
+            <button onClick={this.login}> Log in </button>
         </form>
         </div>
+        )
     }
 }
 
