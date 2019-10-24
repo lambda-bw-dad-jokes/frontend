@@ -75,7 +75,7 @@ const AddJoke = props => {
           />
           Private
         </CheckboxLabel>
-        <Button block bsSize="large" variant="danger"> See my joke </Button>
+        <Button type="submit" block bsSize="large" variant="danger"> See my joke </Button>
       </form>
       
       </Container>

@@ -80,6 +80,8 @@ const JokeList = props => {
 
       {display.map(joke => {
         return (
+          <div>
+          <h3>Add button redirect </h3>
           <FlagProvider>
             <Joke
               id={joke.dadjokeid}
@@ -88,6 +90,7 @@ const JokeList = props => {
               dadjokequestion={joke.dadjokequestion}
             />
           </FlagProvider>
+          </div>
         );
       })}
     </Body>

@@ -21,12 +21,14 @@ const HomePageGrid = (props) => {
                 <Input icon='search' placeholder='Search joke...' onKeyDown={props.search}/>
             </Menu.Item> */}
                
-                   <Link to="/public-feed"><Image src={feed} className="button-home"/></Link>
+                   {/* <Link to="/public-feed"><Image src={feed} className="button-home"/></Link> */}
               
 
-            {/* <button className="button-home" onClick={() => <Link to="/public-feed"></Link> >Find a joke </button> */}
-            {/* <button onClick={() => handleDelete(smurf.id)}>delete smurf</button>   */}
-
+        <Link to="/public-feed" >
+        <button className="button-home"> 
+            Find a joke 
+        </button>
+        </Link>
              
         </>
     );   

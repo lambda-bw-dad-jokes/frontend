@@ -20,13 +20,14 @@ export const menuBarEmoji = {
 }
 export const JokeListHeading = {
     display: 'flex',
-    background: '#35477d',
+    background: '#f1bc31',
     padding: '25px auto',
     width: '75%',
+    height:'40px',
     justifyContent: 'center',
     borderRadius: '5px',
     color: 'white',
-    margin: '0px',
+    margin: '10px',
     marginLeft: '11%',
     fontSize: '2vw',
 }
