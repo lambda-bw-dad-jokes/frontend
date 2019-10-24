@@ -36,8 +36,8 @@ const HomePageGrid = (props) => {
 
             <Button variant="flat" size="xxl"  className="button-home">
                 Find a joke 
+                    {!token ? <Link to="/user"></Link> : <Link to="/jokes"><Image src={book}/></Link>}
             </Button>             
-                    {/* {!token ? <Link to="/user"></Link> : <Link to="/jokes"><Image src={book} className="home-grid-img"/></Link>} */}
 
              {/* PUBLIC FEED IS EMPTY IS IT NORMAL? */}
 
