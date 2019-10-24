@@ -12,7 +12,7 @@ import { useInput } from "./hooks/useInput";
 
 const AddJoke = props => {
   const [setup, setSetup, setupHandler] = useInput("");
-  const [dadjokequestion, setdadjokequestion, dadjokequestionHandler] = useInput("");
+  const [punchline, setPunchline, punchlineHandler] = useInput("");
   const [isprivate, setIsprivate] = useState(false);
 
   const SubmitJoke = e => {
@@ -20,10 +20,10 @@ const AddJoke = props => {
     const token = localStorage.getItem("token");
     axios
       .post(
-        "https://jwhit-dadjokes.herokuapp.com/dadjokes/add",
+        "https://api-dadjokes.herokuapp.com/jokes/auth/create",
         JSON.stringify({
           setup: setup,
-          dadjokequestion: dadjokequestion,
+          punchline: punchline,
           isprivate: isprivate
         }),
         {
@@ -35,7 +35,7 @@ const AddJoke = props => {
       )
       .then(() => {
         setSetup("");
-        setdadjokequestion("");
+        setPunchline("");
         window.location.href = window.location.href;
       });
   };
@@ -51,16 +51,16 @@ const AddJoke = props => {
         <EnterJoke
           type="text"
           name="setup"
-          placeholder="Dadjoke"
+          placeholder="Setup"
           value={setup}
           onChange={e => setupHandler(e.target.value)}
         />
         <EnterJoke
           type="text"
-          name="Dadjoke"
-          placeholder="Question"
-          value={dadjokequestion}
-          onChange={e => dadjokequestionHandler(e.target.value)}
+          name="punchline"
+          placeholder="Punchline"
+          value={punchline}
+          onChange={e => punchlineHandler(e.target.value)}
         />
         <CheckboxLabel for="private">
           <PrivCheckbox

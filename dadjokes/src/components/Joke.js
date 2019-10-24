@@ -25,16 +25,14 @@ import { FlagContext } from "../contexts/FlagContext";
 const AddJoke = props => {
   const [editing, setEditing] = useState(false);
   const [joke, setJoke] = useState({
-    dadjokequestion: props.dadjokequestion,
-    dadjokeanswer: props.dadjokeanswer,
-    dadjokeid: props.dadjokeid,
-    isprivate: false,
-    user: {}
+    setup: props.setup,
+    punchline: props.punchline,
+    id: props.id,
+    isprivate: false
   });
-
   const [show, setShow] = useState(false);
-  const [jokeid, setJokeid, handleDelete] = useDeleteJoke(joke.dadjokeid);
-  const [editJoke, setEditJoke, handleEdit] = useEditJoke(joke.dadjokeid);
+  const [jokeid, setJokeid, handleDelete] = useDeleteJoke(joke.id);
+  const [editJoke, setEditJoke, handleEdit] = useEditJoke(joke);
   const [flag, setFlag] = useContext(FlagContext);
 
   const handleChange = e => {
@@ -48,26 +46,26 @@ const AddJoke = props => {
   return (
     <CardContainer className="joke">
       <CardInfo>
-        <CardId>#{props.dadjokeid}</CardId>
-        <CardContent>{props.dadjokequestion} {props.dadjokeanswer}</CardContent>
+        <CardId>#{props.id}</CardId>
+        <CardContent>{props.setup}</CardContent>
         {show ? (
           <CardPunch onClick={() => setShow(false)}>
-            {props.dadjokequestion}
+            {props.punchline}
           </CardPunch>
         ) : (
           <ShowPunch onClick={() => setShow(true)}>Show Punchline</ShowPunch>
         )}
-        <Emphasized>By: {props.dadjokeid}</Emphasized>
+        <Emphasized>By: {props.user}</Emphasized>
       </CardInfo>
       {localStorage.getItem("token") ? (
         <ButtonRow>
           {!editing ? (
             <TextBtn
               onClick={e => {
-                handleDelete(e.target.dadjokeid);
+                handleDelete(e.target.id);
                 setFlag(!flag);
               }}
-              id={joke.dadjokeid}
+              id={joke.id}
             >
               Delete
             </TextBtn>
@@ -100,9 +98,9 @@ const AddJoke = props => {
             />
             <Input
               type="text"
-              name="dadjokequestion"
-              placeholder="dadjokequestion"
-              value={joke.dadjokequestion}
+              name="punchline"
+              placeholder="Punchline"
+              value={joke.punchline}
               onChange={handleChange}
             />
             <FlexRow>
