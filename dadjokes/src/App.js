@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from "./Components/LoginForm";
 import Register from "./Components/Register";
 import MenuBar from "./Components/MenuBar";
 import Profile from "./Components/Profile";
 import JokeList from "./Components/JokeList";
+
+import { Card } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import { JokeProvider } from "./contexts/JokeContext";
 import { FlagProvider } from "./contexts/FlagContext";
@@ -62,6 +65,7 @@ const searchJokesHandler = e => {
           <Route path='/public-feed' component={PublicJokes} />
         </FlagProvider>
       </JokeProvider>
+      <Card.Footer variant="dark" className="footer"> If YoU aRe ReAdInG tHiS, have a nice day !</Card.Footer>
       <Route path="/Footer" component={Footer} />
     </DataContext.Provider>
     </>

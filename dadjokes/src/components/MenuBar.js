@@ -1,8 +1,24 @@
 import React from 'react';
+import "../App.css";
 import { Link } from 'react-router-dom';
 import { Dropdown, Menu } from 'semantic-ui-react';
 import { NavBarMenu, menuBarEmoji } from './StyledWidgets';
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
+import { Component } from 'react';
+ 
+import styled from 'styled-components';
+
+
+const StyledLink = styled(Link)`
+    padding-right: 30px;
+    color:white;
+
+    &:hover {
+        text-decoration:none;
+        color:#4DAD93;
+    }
+`;
 
 
 
@@ -16,84 +32,41 @@ import { NavBarMenu, menuBarEmoji } from './StyledWidgets';
     console.log('props', props)
     if (token) {
         return (
-            <div style={NavBarMenu} >
-                <Menu attached='top' >
-                    <Dropdown item icon='bars' simple>
-                        <Dropdown.Menu>
-                            <div>
-                            <Link to='/' >
-                                <Dropdown.Item className="nav">Home</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to='/contact' >
-                                <Dropdown.Item className="nav">Contact Us</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/profile'>
-                                <Dropdown.Item className="nav">Profile</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/login'>
-                                <Dropdown.Item className="nav">Login</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/register'>
-                                <Dropdown.Item className="nav">Register</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                                <Dropdown.Item onClick={logout} className="nav">Logout</Dropdown.Item>
-                            </div>
-                        </Dropdown.Menu>
-                    </Dropdown>
-
-                    <Menu.Menu position='left' >
-                    
-                            <h1>Dad Jokes!</h1>
-                    </Menu.Menu>
-                    
-                </Menu>
+            <div>
+                <Navbar bg="dark" variant="dark">
+                    <Navbar.Brand>DAD JOKES</Navbar.Brand>
+                    <Nav className="mr-auto">
+                    <StyledLink to="/">Home</StyledLink>
+                    <StyledLink to="/jokes"> Jokes </StyledLink>
+                    <StyledLink to="/login"> Login</StyledLink>
+                    <StyledLink onClick={logout}> Logout</StyledLink>
+                    <StyledLink to="/register"> Register</StyledLink>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-primary">Search</Button>
+                    </Form>
+                </Navbar>
             </div>
         )
     } else {
 
         return (
             <div>
-                <Menu attached='top'>
-                    <Dropdown item icon='bars' simple>
-                        <Dropdown.Menu>
-                            <div>
-                            <Link to='/' >
-                                <Dropdown.Item>Home</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/login'>
-                                <Dropdown.Item>Login</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/register'>
-                                <Dropdown.Item>Register</Dropdown.Item>
-                            </Link>
-                            </div>
-                            <div>
-                            <Link to ='/public-feed'>
-                                <Dropdown.Item>Public Feed</Dropdown.Item>
-                            </Link>
-                            </div>
-                        </Dropdown.Menu>
-                    </Dropdown>
-
-                    <Menu.Menu position='left' >
-                   
-                            <h1  >Dad Jokes</h1>
-                    </Menu.Menu>
-                </Menu>
+                <Navbar bg="dark" variant="dark">
+                    <Navbar.Brand>DAD JOKES</Navbar.Brand>
+                    <Nav className="mr-auto">
+                    <StyledLink to="/">Home</StyledLink>
+                    <StyledLink to="/jokes"> Jokes </StyledLink>
+                    <StyledLink to="/login"> Login</StyledLink>
+                    <StyledLink onClick={logout}> Logout</StyledLink>
+                    <StyledLink to="/register"> Register</StyledLink>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-primary">Search</Button>
+                    </Form>
+                </Navbar>
             </div>
         )
     }

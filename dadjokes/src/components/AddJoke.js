@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { axioswithAuth } from '../utilities/axiosAuth';
 import {
-  PageHeader,
-  Button,
   PrivCheckbox,
-  EnterJoke,
   CheckboxLabel
 } from "./StyledWidgets";
-
+import "../App.css";
+import Container from "react-bootstrap/Container";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import Login from './LoginForm';
 import { useInput } from "./hooks/useInput";
 
 const AddJoke = props => {
@@ -40,25 +41,29 @@ const AddJoke = props => {
       });
   };
 
+
+
   const checkboxChanged = e => {
     e.target.checked ? setIsprivate(true) : setIsprivate(false);
   };
 
   return (
     <div>
-      <PageHeader>Add Joke</PageHeader>
+      <Container className="p-5">
+      <h2>Hey,</h2>
+        <p> Share your best jokes with us below! You can decide to put them private so only register users can read them.</p><br/>
       <form onSubmit={SubmitJoke}>
-        <EnterJoke
+      <FormLabel>JOKES</FormLabel>
+        <FormControl
           type="text"
           name="setup"
-          placeholder="Dadjoke"
           value={setup}
           onChange={e => setupHandler(e.target.value)}
         />
-        <EnterJoke
+        <FormLabel> PUNCHLINE </FormLabel> 
+        <FormControl
           type="text"
           name="Dadjoke"
-          placeholder="Question"
           value={dadjokequestion}
           onChange={e => dadjokequestionHandler(e.target.value)}
         />
@@ -70,8 +75,10 @@ const AddJoke = props => {
           />
           Private
         </CheckboxLabel>
-        <Button type="submit">Save</Button>
+        <Button type="submit" block bsSize="large" variant="danger"> See my joke </Button>
       </form>
+      
+      </Container>
     </div>
   );
 };

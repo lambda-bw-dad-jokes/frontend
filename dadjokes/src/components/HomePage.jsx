@@ -6,7 +6,9 @@ import axios from "axios";
 import '../homepage.css'; 
 import HomePageGrid from "./HomePageGrid";
 import dad from "../Components/images/dad-quote.jpg"; 
-import { DataContext } from '../contexts/DataContext'
+import { DataContext } from '../contexts/DataContext';
+
+import HomeBackground from '../DesignsElements/homeImg.png';
 
 
 const HomePage = (props) => {
@@ -40,11 +42,11 @@ const HomePage = (props) => {
     }, []);
     
     return (
-      <div className="home-container">
-            <div className="daily-joke-container">
-            <img src={dad} className="dad-quote-img"/>
+      <div className="Home" style={{backgroundImage: `url(${HomeBackground})`}}>
+            {/* <div className="daily-joke-container">
+            
                 <h1 className="daily-joke">{joke}</h1>
-            </div>
+             </div> */}
 
             <HomePageGrid />
       </div>

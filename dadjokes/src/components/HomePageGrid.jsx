@@ -3,8 +3,10 @@
 // imports 
 import React from 'react';
 import { Grid, Image, Input, Menu } from "semantic-ui-react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PublicJokes from './PublicJokes';
 
+import { Button } from "react-bootstrap";
 //image imports
 import book from "./images/joke-book.png"; 
 import feed from "./images/public-feed.png";
@@ -14,30 +16,21 @@ import profile from "./images/profile.png";
 const HomePageGrid = (props) => {
     const token = localStorage.getItem('token')
     return (
-        <div className="home-grid-container">
-
-            <Menu.Item>
+        <>
+            {/* <Menu.Item>
                 <Input icon='search' placeholder='Search joke...' onKeyDown={props.search}/>
-            </Menu.Item>
+            </Menu.Item> */}
+               
+                   {/* <Link to="/public-feed"><Image src={feed} className="button-home"/></Link> */}
+              
 
-            <Grid className="home-grid">
-
-                <Grid.Column>
-                    {!token ? <Link to="/user"><Image src={book} className="home-grid-img"/></Link> : <Link to="/jokes"><Image src={book} className="home-grid-img"/></Link>}
-                </Grid.Column>
+        <Link to="/public-feed" >
+        <button className="button-home"> 
+            Find a joke 
+        </button>
+        </Link>
              
-
-                <Grid.Column>
-                    <Link to="/public-feed"><Image src={feed} className="home-grid-img"/></Link>
-                </Grid.Column>
-
-
-                <Grid.Column>
-                    <Link to="/profile"><Image src={profile} className="home-grid-img"/></Link>
-                </Grid.Column>
-            </Grid>
-
-        </div>
+        </>
     );   
 };
 

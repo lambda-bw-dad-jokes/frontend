@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { UserJokeContext } from "../contexts/UserJokeContext";
 import { UserContext } from "../contexts/UserContext";
 import { FlagContext } from "../contexts/FlagContext";
+import Homer from '../DesignsElements/homer.jpg';
+
 import {
   ProfileJokeContainer,
   ScrollJokes,
@@ -13,6 +15,8 @@ import {
   ProfileInfo,
   CardContainer
 } from "./StyledWidgets";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+
 
 const ProfileJokes = () => {
   const [jokes, setJokes] = useContext(UserJokeContext);
@@ -22,34 +26,13 @@ const ProfileJokes = () => {
   return (
     <ProfileDiv>
       <ProfileInfo>
-        <h2>{`Hello, ${currentUser}`}</h2>
         <CardContainer>
           <AddJoke />
         </CardContainer>
+      {/* <ProfileJokeContainer> */}
       </ProfileInfo>
-      <ProfileJokeContainer>
-        <ScrollJokes>
-          {jokes.length === 0 ? (
-            <div>
-              <h3>You haven't created any jokes!</h3>
-              <p>
-                <em>Jokes you create will display here</em>
-              </p>
-            </div>
-          ) : (
-            jokes.map(joke => {
-              return (
-                <Joke
-                id={joke.dadjokeid}
-                key={joke.id}
-                dadjokeanswer={joke.dadjokeanswer}
-                dadjokequestion={joke.dadjokequestion}
-                />
-              );
-            })
-          )}
-        </ScrollJokes>
-      </ProfileJokeContainer>
+      
+      {/* </ProfileJokeContainer> */}
     </ProfileDiv>
   );
 };
