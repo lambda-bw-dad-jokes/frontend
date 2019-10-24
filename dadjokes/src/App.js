@@ -24,7 +24,7 @@ function App() {
           <Route path="/register" component={Register} />
         </FlagProvider>
       </JokeProvider>
-      <Route path="/Footer" component={Footer} />
+      <Route path="/" component={Footer} />
     </div>
   );
 }
