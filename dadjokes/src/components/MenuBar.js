@@ -36,11 +36,13 @@ const StyledLink = styled(Link)`
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand>DAD JOKES</Navbar.Brand>
                     <Nav className="mr-auto">
-                    <StyledLink to="/">Home</StyledLink>
                     <StyledLink to="/jokes"> Jokes </StyledLink>
+                    <StyledLink to="/">
+                    {localStorage.getItem("token") ? "Home" : "Log In"}
+                    </StyledLink>
+                    <StyledLink to="/register"> Register</StyledLink>
                     <StyledLink to="/login"> Login</StyledLink>
                     <StyledLink onClick={logout}> Logout</StyledLink>
-                    <StyledLink to="/register"> Register</StyledLink>
                     </Nav>
                     <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
