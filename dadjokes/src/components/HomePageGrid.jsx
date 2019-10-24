@@ -5,6 +5,7 @@ import React from 'react';
 import { Grid, Image, Input, Menu } from "semantic-ui-react";
 import { Link } from 'react-router-dom'
 
+import { Button } from "react-bootstrap";
 //image imports
 import book from "./images/joke-book.png"; 
 import feed from "./images/public-feed.png";
@@ -14,30 +15,41 @@ import profile from "./images/profile.png";
 const HomePageGrid = (props) => {
     const token = localStorage.getItem('token')
     return (
-        <div className="home-grid-container">
-
-            <Menu.Item>
+        <>
+            {/* <Menu.Item>
                 <Input icon='search' placeholder='Search joke...' onKeyDown={props.search}/>
-            </Menu.Item>
+            </Menu.Item> */}
+               
+            <style type="text/css">
+                {`
+                .btn-flat {
+                background-color: #4DAD93;
+                color: white;
+                }
 
-            <Grid className="home-grid">
+                .btn-xxl {
+                padding: 1rem 1.5rem;
+                font-size: 1.5rem;
+                }
+                `}
+            </style>
 
-                <Grid.Column>
-                    {!token ? <Link to="/user"><Image src={book} className="home-grid-img"/></Link> : <Link to="/jokes"><Image src={book} className="home-grid-img"/></Link>}
-                </Grid.Column>
-             
+            <Button variant="flat" size="xxl"  className="button-home">
+                Find a joke 
+            </Button>             
+                    {/* {!token ? <Link to="/user"></Link> : <Link to="/jokes"><Image src={book} className="home-grid-img"/></Link>} */}
 
-                <Grid.Column>
+             {/* PUBLIC FEED IS EMPTY IS IT NORMAL? */}
+
+                {/* <Grid.Column>
                     <Link to="/public-feed"><Image src={feed} className="home-grid-img"/></Link>
-                </Grid.Column>
+                </Grid.Column> */}
 
 
-                <Grid.Column>
+                {/* <Grid.Column>
                     <Link to="/profile"><Image src={profile} className="home-grid-img"/></Link>
-                </Grid.Column>
-            </Grid>
-
-        </div>
+                </Grid.Column> */}
+                </>
     );   
 };
 

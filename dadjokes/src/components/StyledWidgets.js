@@ -52,11 +52,11 @@ export const NavBarMenu = {
 
 
 export const Greeting = styled.div`
-  background-image: url(${img});
+  // background-image: url(${img});
   background-repeat: no-repeat;
   background-size: auto;
   background-position: left;
-  background-color: #f77754;
+  background-color: #E2582D;
   height: 93vh;
   margin-top: 0;
   position: relative;
@@ -207,9 +207,10 @@ export const Input = styled.input.attrs(props => ({
 }))`
   border-radius: 3px;
   border: none;
-  padding: 5px;
+  padding: 25px;
   width: 60%;
   margin: 10px auto;
+  background-color:white;
 `;
 
 export const FlexRow = styled.div`
@@ -232,14 +233,14 @@ export const Logo = styled.img`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 65%;
   min-width: 360px;
   border: 1px solid black;
   margin: 10px auto;
   padding: 2%;
   border-radius: 10px;
-  background: #b22222;
-  color: white;
+  background: white;
+  color: black;
 `;
 
 export const AddJokeMain = styled(CardContainer)`
@@ -327,6 +328,7 @@ export const ProfileJokeContainer = styled.div`
 export const ScrollJokes = styled.div`
   height: 320px;
   overflow: auto;
+  background:#e25822;
 `;
 
 export const ProfileDiv = styled.div`
