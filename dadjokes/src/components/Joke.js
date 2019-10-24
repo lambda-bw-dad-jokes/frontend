@@ -21,6 +21,7 @@ import useDeleteJoke from "./hooks/useDeleteJoke";
 import useEditJoke from "./hooks/useEditJoke";
 import { FlagContext } from "../contexts/FlagContext";
 
+
 const AddJoke = props => {
   const [editing, setEditing] = useState(false);
   const [joke, setJoke] = useState({
@@ -33,7 +34,7 @@ const AddJoke = props => {
 
   const [show, setShow] = useState(false);
   const [jokeid, setJokeid, handleDelete] = useDeleteJoke(joke.dadjokeid);
-  const [editJoke, setEditJoke, handleEdit] = useEditJoke(joke);
+  const [editJoke, setEditJoke, handleEdit] = useEditJoke(joke.dadjokeid);
   const [flag, setFlag] = useContext(FlagContext);
 
   const handleChange = e => {

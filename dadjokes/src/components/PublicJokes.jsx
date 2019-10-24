@@ -7,7 +7,6 @@ import { JokeListHeading } from './StyledWidgets';
 
 // use public jokes api to get information for PublicJokeCard 
 function PublicJokes () {
-
     const { data, filteredData } = useContext(DataContext)
 
     return (

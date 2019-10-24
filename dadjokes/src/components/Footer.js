@@ -12,8 +12,9 @@ const FooterWrap = styled.div`
   height: 25%vh;
 `;
 
-const Favicon = styled.a`
+const Favicon = styled.span`
   margin: 2rem;
+  font-size: 3rem;
   &:hover {
     color: #b22222;
   }
@@ -25,10 +26,26 @@ const Copyright = styled.div`
   font-size: 1.5rem;
 `;
 
-const fb = <FontAwesomeIcon icon={faFacebookF} />;
-const github = <FontAwesomeIcon icon={faGithub} />;
-const twitter = <FontAwesomeIcon icon={faTwitter} />;
-const instagram = <FontAwesomeIcon icon={faInstagram} />;
+const fb = (
+  <a href="http://www.facebook.com" className="social">
+    <FontAwesomeIcon icon={faFacebookF} />
+  </a>
+);
+const github = (
+  <a href="http://www.github.com" className="social">
+    <FontAwesomeIcon icon={faGithub} />
+  </a>
+);
+const twitter = (
+  <a href="http://www.twitter.com" className="social">
+    <FontAwesomeIcon icon={faTwitter} />
+  </a>
+);
+const instagram = (
+  <a href="http://www.instagram.com" className="social">
+    <FontAwesomeIcon icon={faInstagram} />
+  </a>
+);
 const brands = [fb, github, twitter, instagram];
 
 export default function Footer() {
@@ -41,12 +58,10 @@ export default function Footer() {
           ))}
         </h1>
         <Copyright>
-          DJ Team
+          DJ Team 2019
           <FontAwesomeIcon icon={faLaughSquint} />
-          2019
         </Copyright>
       </FooterWrap>
     </div>
   );
 }
-
