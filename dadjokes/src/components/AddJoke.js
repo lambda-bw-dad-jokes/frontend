@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { axioswithAuth } from '../utilities/axiosAuth';
 import {
-  PageHeader,
-  Button,
   PrivCheckbox,
-  EnterJoke,
   CheckboxLabel
 } from "./StyledWidgets";
-
+import "../App.css";
+import Container from "react-bootstrap/Container";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import Login from './LoginForm';
 import { useInput } from "./hooks/useInput";
 
 const AddJoke = props => {
   const [setup, setSetup, setupHandler] = useInput("");
-  const [punchline, setPunchline, punchlineHandler] = useInput("");
+  const [dadjokequestion, setdadjokequestion, dadjokequestionHandler] = useInput("");
   const [isprivate, setIsprivate] = useState(false);
 
   const SubmitJoke = e => {
@@ -20,10 +21,10 @@ const AddJoke = props => {
     const token = localStorage.getItem("token");
     axios
       .post(
-        "https://api-dadjokes.herokuapp.com/jokes/auth/create",
+        "https://jwhit-dadjokes.herokuapp.com/dadjokes/add",
         JSON.stringify({
           setup: setup,
-          punchline: punchline,
+          dadjokequestion: dadjokequestion,
           isprivate: isprivate
         }),
         {
@@ -35,10 +36,12 @@ const AddJoke = props => {
       )
       .then(() => {
         setSetup("");
-        setPunchline("");
+        setdadjokequestion("");
         window.location.href = window.location.href;
       });
   };
+
+
 
   const checkboxChanged = e => {
     e.target.checked ? setIsprivate(true) : setIsprivate(false);
@@ -46,21 +49,23 @@ const AddJoke = props => {
 
   return (
     <div>
-      <PageHeader>Add Joke</PageHeader>
+      <Container className="p-5">
+      <h2>Hey,</h2>
+        <p> Share your best jokes with us below! You can decide to put them private so only register users can read them.</p><br/>
       <form onSubmit={SubmitJoke}>
-        <EnterJoke
+      <FormLabel>JOKES</FormLabel>
+        <FormControl
           type="text"
           name="setup"
-          placeholder="Setup"
           value={setup}
           onChange={e => setupHandler(e.target.value)}
         />
-        <EnterJoke
+        <FormLabel> PUNCHLINE </FormLabel> 
+        <FormControl
           type="text"
-          name="punchline"
-          placeholder="Punchline"
-          value={punchline}
-          onChange={e => punchlineHandler(e.target.value)}
+          name="Dadjoke"
+          value={dadjokequestion}
+          onChange={e => dadjokequestionHandler(e.target.value)}
         />
         <CheckboxLabel for="private">
           <PrivCheckbox
@@ -70,8 +75,10 @@ const AddJoke = props => {
           />
           Private
         </CheckboxLabel>
-        <Button type="submit">Save</Button>
+        <Button block bsSize="large" variant="danger"> See my joke </Button>
       </form>
+      
+      </Container>
     </div>
   );
 };

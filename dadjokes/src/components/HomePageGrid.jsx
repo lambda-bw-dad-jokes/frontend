@@ -3,7 +3,8 @@
 // imports 
 import React from 'react';
 import { Grid, Image, Input, Menu } from "semantic-ui-react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PublicJokes from './PublicJokes';
 
 import { Button } from "react-bootstrap";
 //image imports
@@ -20,36 +21,14 @@ const HomePageGrid = (props) => {
                 <Input icon='search' placeholder='Search joke...' onKeyDown={props.search}/>
             </Menu.Item> */}
                
-            <style type="text/css">
-                {`
-                .btn-flat {
-                background-color: #4DAD93;
-                color: white;
-                }
+                   <Link to="/public-feed"><Image src={feed} className="button-home"/></Link>
+              
 
-                .btn-xxl {
-                padding: 1rem 1.5rem;
-                font-size: 1.5rem;
-                }
-                `}
-            </style>
+            {/* <button className="button-home" onClick={() => <Link to="/public-feed"></Link> >Find a joke </button> */}
+            {/* <button onClick={() => handleDelete(smurf.id)}>delete smurf</button>   */}
 
-            <Button variant="flat" size="xxl"  className="button-home">
-                Find a joke 
-                    {!token ? <Link to="/user"></Link> : <Link to="/jokes"><Image src={book}/></Link>}
-            </Button>             
-
-             {/* PUBLIC FEED IS EMPTY IS IT NORMAL? */}
-
-                {/* <Grid.Column>
-                    <Link to="/public-feed"><Image src={feed} className="home-grid-img"/></Link>
-                </Grid.Column> */}
-
-
-                {/* <Grid.Column>
-                    <Link to="/profile"><Image src={profile} className="home-grid-img"/></Link>
-                </Grid.Column> */}
-                </>
+             
+        </>
     );   
 };
 

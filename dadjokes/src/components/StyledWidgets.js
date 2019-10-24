@@ -150,14 +150,6 @@ export const SaveJoke = styled.button`
   }
 `;
 
-export const EnterJoke = styled.input`
-  border-radius: 3px;
-  border: 1px solid black;
-  background: lightgrey;
-  filter: brightness(110%);
-  padding: 5px;
-  box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.3);
-`;
 
 export const PrivCheckbox = styled.input`
   display: block;
@@ -197,9 +189,9 @@ export const SignInForm = styled.form`
 
 export const CheckboxLabel = styled.label`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2px;
+  justify-content: start;
+  align-items: start;
+  margin: 15px;
 `;
 export const Input = styled.input.attrs(props => ({
   type: props.type,
@@ -233,15 +225,18 @@ export const Logo = styled.img`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
-  min-width: 360px;
-  border: 1px solid black;
-  margin: 10px auto;
+  width: 500px;
+  height:550px;
   padding: 2%;
   border-radius: 10px;
   background: white;
   color: black;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  background-repeat: no-repeat;
+  background-size: 340px auto;
+  background-image: url("./DesignsElements/homer.jpg");
 `;
+
 
 export const AddJokeMain = styled(CardContainer)`
   width: 25%;
@@ -319,24 +314,27 @@ export const Body = styled.div`
 `;
 
 export const ProfileJokeContainer = styled.div`
-  float: left;
-  height: 350px;
-  width: 450px;
-  background: #e25822;
+  width: 0px;
+
 `;
 
 export const ScrollJokes = styled.div`
-  height: 320px;
   overflow: auto;
-  background:#e25822;
+  background:white;
+  float: left;
+  height: 350px;
+  width: 450px;
 `;
 
 export const ProfileDiv = styled.div`
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  align-item: center;
+  justify-content: space-evenly;
 `;
 
 export const ProfileInfo = styled.div`
-  margin: 0% auto;
+ display:flex;
+ align-item: space-evenly;
+ marging:5px;
+ margin:5% auto;
 `;

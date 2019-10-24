@@ -22,7 +22,7 @@ const JokeList = props => {
 
   useEffect(() => {
     axios
-      .get(`https://api-dadjokes.herokuapp.com/jokes/public`)
+      .get(`http://jwhit-dadjokes.herokuapp.com/dadjokes/public?size=1000&page=0&sort=dadjokeid,desc`)
       .then(response => {
         setDisplay(response.data);
       })
@@ -82,11 +82,10 @@ const JokeList = props => {
         return (
           <FlagProvider>
             <Joke
-              id={joke.id}
+              id={joke.dadjokeid}
               key={joke.id}
-              setup={joke.setup}
-              punchline={joke.punchline}
-              user={joke.owner.username}
+              dadjokeanswer={joke.dadjokeanswer}
+              dadjokequestion={joke.dadjokequestion}
             />
           </FlagProvider>
         );
