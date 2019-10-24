@@ -57,14 +57,14 @@ const searchJokesHandler = e => {
       <JokeProvider>
         <FlagProvider>
           <Route path="/" component={MenuBar} />
-          <Route exact path="/" component={HomePage} />
           <Route path="/jokes" component={JokeList} />
           <Route path="/profile" component={Profile} />
-          <Route path="/login" component={LoginForm} />
-          <Route path="/register" component={Register} />
-          <Route path='/public-feed' component={PublicJokes} />
         </FlagProvider>
       </JokeProvider>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/register" component={Register} />
+      <Route path='/public-feed' component={PublicJokes} />
       <Card.Footer variant="dark" className="footer"> If YoU aRe ReAdInG tHiS, have a nice day !</Card.Footer>
       <Route path="/Footer" component={Footer} />
     </DataContext.Provider>
