@@ -24,7 +24,7 @@ const HomePageGrid = (props) => {
                    {/* <Link to="/public-feed"><Image src={feed} className="button-home"/></Link> */}
               
 
-        <Link to="/public-feed" >
+        <Link to="/jokes" >
         <button className="button-home"> 
             Find a joke 
         </button>

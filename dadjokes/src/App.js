@@ -17,43 +17,11 @@ import PublicJokes from "./Components/PublicJokes";
 import axios from 'axios';
 import { DataContext } from './contexts/DataContext'
 
-function App(props) {
-  const [data, setData] = useState([])
-  const [filteredData, setFilteredData] = useState([])
-
-  useEffect(() => {
-    const getFeed= () => {
-            axios 
-                .get("https://mesofunny.herokuapp.com/api/v1/jokes")
-
-                .then(response => {
-                    console.log(response.data.jokes)
-                    setData(response.data.jokes)
-                })
-
-                .catch(error => {
-                console.log("Where are my jokes?", error)
-                });
-        }
-
-        getFeed();
-  }, [])
-
-const searchJokesHandler = e => {
-  const jokes = data.filter(joke => {
-    if (joke.title.includes(e.target.value)) {
-      return joke
-    }
-  })
-  setFilteredData(jokes)
-}
-
-  console.log('data', filteredData)
+function App() {
 
   return (
     <div className="App">
-      <>
-      <DataContext.Provider value={{searchJokesHandler, data, filteredData}}>
+      <> 
       <JokeProvider>
         <FlagProvider>
           <Route path="/" component={MenuBar} />
@@ -67,7 +35,7 @@ const searchJokesHandler = e => {
       <Route path='/public-feed' component={PublicJokes} />
       <Card.Footer variant="dark" className="footer"> If YoU aRe ReAdInG tHiS, have a nice day !</Card.Footer>
       <Route path="/Footer" component={Footer} />
-    </DataContext.Provider>
+   
     </>
     </div>
   );
