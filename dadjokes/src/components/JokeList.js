@@ -11,7 +11,8 @@ import {
   Body,
   AddJokeMain,
   SearchInput,
-  Button
+  Button,
+  JokesList
 } from "./StyledWidgets";
 
 const JokeList = props => {
@@ -64,20 +65,25 @@ const JokeList = props => {
 
   return (
     <Body>
+        <JokesList>
       <form onSubmit={e => submitHandler(e)}>
         <SearchInput
           onChange={e => handleInput(e.target.value)}
           value={input}
           placeholder="Search By Punchline"
-        />
+          />
         <Button>Search</Button>
       </form>
       {localStorage.getItem("token") ? (
         userLoggedIn()
       ) : (
+        <>
         <h2>Hi Hungry, I'm Dad</h2>
+        <h4> Psst, register if you want to add your favorites jokes too!</h4>
+        </>
       )}
 
+    </JokesList>
       {display.map(joke => {
         return (
           <FlagProvider>

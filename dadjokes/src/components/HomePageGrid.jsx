@@ -17,19 +17,11 @@ const HomePageGrid = (props) => {
     const token = localStorage.getItem('token')
     return (
         <>
-            {/* <Menu.Item>
-                <Input icon='search' placeholder='Search joke...' onKeyDown={props.search}/>
-            </Menu.Item> */}
-               
-                   {/* <Link to="/public-feed"><Image src={feed} className="button-home"/></Link> */}
-              
-
         <Link to="/jokes" >
         <button className="button-home"> 
             Find a joke 
         </button>
-        </Link>
-             
+        </Link>  
         </>
     );   
 };
