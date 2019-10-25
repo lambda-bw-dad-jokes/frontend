@@ -37,7 +37,7 @@ const Login = props => {
         return(
             <div className='body'>
                 <Container className="p-5">
-                    <div className="jumbotron" >
+                    <div className="jumbotron">
                         <div className="Login">
                             <form onSubmit={e => handleSubmit(e)}>
                                 <h1>Welcome back!</h1>

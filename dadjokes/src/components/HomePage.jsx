@@ -43,11 +43,6 @@ const HomePage = (props) => {
     
     return (
       <div className="Home" style={{backgroundImage: `url(${HomeBackground})`}}>
-            {/* <div className="daily-joke-container">
-            
-                <h1 className="daily-joke">{joke}</h1>
-             </div> */}
-
             <HomePageGrid />
       </div>
     );

@@ -2,11 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import {
   CardContainer,
+  CardContainerJoke,
   CardContent,
   Emphasized,
-  CardInfo,
   ButtonRow,
-  TextBtn,
   PrivCheckbox,
   CheckboxLabel,
   Input,
@@ -14,8 +13,10 @@ import {
   Button,
   CardPunch,
   ShowPunch,
-  CardId
+  CardId,
+  DisplayJoke
 } from "./StyledWidgets";
+import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
 import useDeleteJoke from "./hooks/useDeleteJoke";
 import useEditJoke from "./hooks/useEditJoke";
@@ -44,8 +45,7 @@ const AddJoke = props => {
   }, [flag]);
 
   return (
-    <CardContainer className="joke">
-      <CardInfo>
+    <DisplayJoke>
         <CardId>#{props.id}</CardId>
         <CardContent>{props.setup}</CardContent>
         {show ? (
@@ -56,11 +56,11 @@ const AddJoke = props => {
           <ShowPunch onClick={() => setShow(true)}>Show Punchline</ShowPunch>
         )}
         <Emphasized>By: {props.user}</Emphasized>
-      </CardInfo>
+      
       {localStorage.getItem("token") ? (
         <ButtonRow>
           {!editing ? (
-            <TextBtn
+            <Button
               onClick={e => {
                 handleDelete(e.target.id);
                 setFlag(!flag);
@@ -68,19 +68,20 @@ const AddJoke = props => {
               id={joke.id}
             >
               Delete
-            </TextBtn>
+            </Button>
           ) : (
             <></>
           )}
-          <TextBtn onClick={() => setEditing(!editing)}>
+          <Button onClick={() => setEditing(!editing)}>
             {!editing ? "Edit" : "Cancel"}
-          </TextBtn>
+          </Button>
         </ButtonRow>
       ) : (
         <></>
       )}
       {editing ? (
         <div>
+        <CardContainerJoke>
           <form
             onSubmit={e => {
               e.preventDefault();
@@ -89,17 +90,15 @@ const AddJoke = props => {
             }}
             id={joke.id}
           >
-            <Input
+            <FormControl
               type="text"
               name="setup"
-              placeholder="Setup"
               value={joke.setup}
               onChange={handleChange}
             />
-            <Input
+            <FormControl
               type="text"
               name="punchline"
-              placeholder="Punchline"
               value={joke.punchline}
               onChange={handleChange}
             />
@@ -111,11 +110,12 @@ const AddJoke = props => {
               <Button>save</Button>
             </FlexRow>
           </form>
+          </CardContainerJoke>
         </div>
       ) : (
         <></>
       )}
-    </CardContainer>
+    </DisplayJoke>
   );
 };
 

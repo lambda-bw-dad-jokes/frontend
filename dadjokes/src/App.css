@@ -66,7 +66,7 @@
 .jumbotron {
   background-image: url("./DesignsElements/simpsons-wallpaper-hd.jpg");
   background-repeat: no-repeat;
-  background-size: 340px auto;
+  background-size: 350px auto;
   width:800px;
   height:auto;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
