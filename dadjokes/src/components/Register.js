@@ -63,7 +63,7 @@ const Register = props => {
                     <div className="Login">
                       <form onSubmit={e => handleSubmit(e)}>
                           <h1> Welcome to DAD JOKES </h1>
-                          <h5> The place to get your daily dose of healthy laught </h5><br/>
+                          <h5> The place to get your daily dose of healthy laugh </h5><br/>
                             <FormGroup controlId="username" bsSize="large">
                             <FormLabel>USERNAME</FormLabel>
                                 <FormControl
@@ -75,36 +75,25 @@ const Register = props => {
                                     onChange={e => handleUsername(e.target.value)}
                                     />
                                     </FormGroup>
-                                    {/* <FormGroup controlId="email" bsSize="large">
-                                    <FormLabel>EMAIL</FormLabel>
-                                    <FormControl
-                                    autoFocus
-                                    type="text"
-                                    name="primaryemail"
-                                    placeholder="email"
-                                    value={this.state.credentials.primaryemail}
-                                    onChange={this.handleChange}
-                                    />   */}
-                                    {/* </FormGroup> */}
                                     <FormGroup controlId="password" bsSize="large">
                                     <FormLabel>PASSWORD</FormLabel>
                                     <FormControl
-                                    autoFocus
-                                    type="password"
-                                    name="password"
-                                    placeholder='password'
-                                    value={password}
-                                    onChange={e => handlePassword(e.target.value)}
-                                    />  
-
+                                        autoFocus
+                                        type="password"
+                                        name="password"
+                                        placeholder='password'
+                                        value={password}
+                                        onChange={e => handlePassword(e.target.value)}
+                                    /> 
                                     <FormControl
-                                            className="default"
-                                            type="password"
-                                            placeholder="confirm password"
-                                            name="confirm"
-                                            onChange={e => handleConfirm(e.target.value)}
-                                            value={confirm}
-                                            /> 
+                                        autoFocus
+                                        className="default"
+                                        type="password"
+                                        placeholder="confirm password"
+                                        name="confirm"
+                                        onChange={e => handleConfirm(e.target.value)}
+                                        value={confirm}
+                                        /> 
                                     </FormGroup>
                                     <Button block bsSize="large" variant="danger" onClick={e => handleSubmit(e)}> Register </Button>
                                 <p>Already have an account ? Just sign up!</p>
