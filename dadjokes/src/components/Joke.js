@@ -8,7 +8,7 @@ import {
   ButtonRow,
   PrivCheckbox,
   CheckboxLabel,
-  Input,
+  
   FlexRow,
   Button,
   CardPunch,
