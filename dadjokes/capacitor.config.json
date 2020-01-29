@@ -1,0 +1,8 @@
+{
+  "appId": "com.brendadadjokes.com",
+  "appName": "brendadadjokes",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "build",
+  "cordova": {}
+}
