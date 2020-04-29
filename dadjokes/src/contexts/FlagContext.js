@@ -1,8 +1,4 @@
 import React, { useState, createContext, useEffect } from "react";
-import JokeList from "../Components/JokeList";
-import Joke from "../Components/Joke";
-import Profile from "../Components/Profile";
-import ProfileJokes from "../Components/ProfileJokes";
 
 export const FlagContext = createContext();
 
