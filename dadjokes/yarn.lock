@@ -987,11 +987,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@capacitor/android@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-1.4.0.tgz#ce000d240e599298cd95b8f48b79157e06b732dc"
-  integrity sha512-J+QosCfRFw6sm8j/g0RAMwM9B01oMbRcbss6HkSggPe3OqDm+hdSDjNzU7BHDnRxnSlucb5N6xmGuXz2u7/piA==
-
 "@capacitor/cli@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-1.4.0.tgz#09c95aa6b1eefd0b6c9c454bf741efb792e566e2"
@@ -5042,9 +5037,9 @@ hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
     react-is "^16.7.0"
 
 hosted-git-info@^2.1.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
-  integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hpack.js@^2.1.6:
   version "2.1.6"
